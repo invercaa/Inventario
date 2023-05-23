@@ -1,0 +1,26 @@
+{
+	"name": "Inventario",
+	"short_name": "Inventario",
+	"display": "standalone",
+    "start_url": "./productos",
+	"scope": "/",
+	"icons": [
+		{
+			"src": "https://res.cloudinary.com/daw5hl5se/image/upload/v1684793238/InventarioRomero/electric_x192_vhkzce.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "https://res.cloudinary.com/daw5hl5se/image/upload/v1684793238/InventarioRomero/electric_x512_mtenju.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		}
+	],
+	"background_color": "#9cb691",
+	"theme_color": "#9cb691",
+	"gcm_user_visible_only": true,
+    "related_applications": [],
+    "capture_links": "none"
+}

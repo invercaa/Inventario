@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+	<!-- INICIO HEAD -->
+<head th:fragment="head">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" crossorigin="use-credentials" href="/manifest.json" />
+	<meta name="theme-color" content="#9cb691" />
+	<link rel="apple-touch-icon" href="https://res.cloudinary.com/daw5hl5se/image/upload/v1684793238/InventarioRomero/electric_x192_vhkzce.png" />
+	<link rel="apple-touch-icon" href="https://res.cloudinary.com/daw5hl5se/image/upload/v1684793238/InventarioRomero/electric_x512_mtenju.png" />
+	
+	<title th:text="'Inventario-' + ${titulo}"></title>
+	<!-- HOJAS DE ESTILO -->
+	<link rel="stylesheet" th:href="@{/css/jquery-ui.css}" />
+	<link rel="stylesheet" th:href="@{/css/estilos.css}" />
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+	<link th:href="@{/plugins/fontawesome/css/all.css}" rel="stylesheet">
+	<link th:src="@{/plugins/fontawesome/css/fontawesome.css}" rel="stylesheet">
+	<link th:src="@{/plugins/fontawesome/css/brands.css}" rel="stylesheet">
+	<link th:src="@{/plugins/fontawesome/css/solid.css}" rel="stylesheet">
+	<link th:src="@{/plugins/fontawesome/css/v5-font-face.css}" rel="stylesheet" />
+	<link th:href="@{/plugins/datatables-bs4/css/dataTables.bootstrap4.css}" rel="stylesheet">
+	<link th:href="@{/plugins/datatables-responsive/css/responsive.bootstrap4.css}" rel="stylesheet">
+	<link th:href="@{/plugins/datatables-buttons/css/buttons.bootstrap4.css}" rel="stylesheet">
+</head>
+<!-- FIN HEAD -->
+
+	<!-- INICIO BODY -->
+	<body>
+	
+		<!-- INICIO FRAGMENTO HEADER -->
+		<header th:fragment="header">
+			<nav class="navbar navbar-expand-lg navbar-ligth bg-ligth">
+			<div class="container-fluid">
+				<a class="nav-link" href="#">Inventario</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active"><a class="nav-link" th:href="@{/productos}">Productos</a>
+						</li>
+<!-- 						<li class="nav-item"><a class="nav-link" href="#">Clientes</a> -->
+<!-- 						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		</header>			    
+		<!-- FIN FRAGMENTO HEADER -->
+		
+		<!-- INICIO CONTENEDOR PRINCIPAL -->
+		<div class="container content-wrapper">
+		
+		</div>
+		<!-- FIN CONTENEDOR PRINCIPAL -->
+
+	<!-- INICIO FRAGMENTO FOOTER -->
+	<footer th:fragment="footer">
+		<!-- INICIO SCRIPT REQUERIDOS -->
+		<script th:src="@{/js/responsive-tables.js}"></script>
+		<script th:src="@{/js/sweetalert2.all.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+		<script th:src="@{/plugins/jquery/jquery.js}"></script>
+		<script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.js}"></script>						
+		<script th:src="@{/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js}"></script>
+		
+		<script th:src="@{/plugins/datatables/jquery.dataTables.js}"></script>
+		<script th:src="@{/plugins/datatables-bs4/js/dataTables.bootstrap4.js}"></script>
+		<script th:src="@{/plugins/datatables-buttons/js/dataTables.buttons.js}"></script>
+		<script th:src="@{/plugins/datatables-buttons/js/buttons.bootstrap4.js}"></script>
+		<script th:src="@{/plugins/jszip/jszip.js}"></script>
+		<script th:src="@{/plugins/pdfmake/pdfmake.js}"></script>
+		<script th:src="@{/plugins/pdfmake/vfs_fonts.js}"></script>
+		<script th:src="@{/plugins/datatables-buttons/js/buttons.html5.js}"></script>
+		<script th:src="@{/plugins/datatables-buttons/js/buttons.print.js}"></script>
+		<script th:src="@{/plugins/datatables-buttons/js/buttons.colVis.js}"></script>
+		<!-- PLUGINS PARA LAS DATATABLES -->
+
+		<!-- FIN SCRIPT REQUERIDOS -->
+
+	</footer>
+	<!-- FIN FRAGMENTO FOOTER -->
+	</body>
+	<!-- FIN BODY -->
+</html>

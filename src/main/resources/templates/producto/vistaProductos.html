@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<!-- MODAL TIPO DE PRODUCTO -->
+	<div class="container" id="modal-tipo-producto">
+		<div class="modal fade" id="tipo-producto" tabindex="-1"
+			aria-labelledby="basicModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">AGREGAR TIPO DE
+							PRODUCTO</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">x</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+						<div class="form-group row">
+							<label class="col-form-label col-form-label-sm" for="tipProducto">Categoria
+								de Producto</label>
+							<div>
+								<select name="tipProducto" class="form-select form-select-sm"
+									id="tipProducto" required>
+									<option value="">-- Seleccionar la categoria del producto --</option>
+									<option th:each="estado : ${listEstados}"
+										th:value="${estado.estId}" th:text="${estado.estDescripcion}"></option>
+								</select>
+								<div class="invalid-feedback">Seleccione una categoria de
+									producto.</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class=" col-form-label col-form-label-sm">Tipo de
+								producto</label>
+							<div class=" input-group input-group-sm">
+								<input type="number" min="1" id="cantidad"
+									class="form-control form-control-sm" required="required">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class=" col-form-label col-form-label-sm">Precio</label>
+							<div class=" input-group input-group-sm">
+								<input type="number" min="1" id="cantidad"
+									class="form-control form-control-sm" required="required">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- FIN MODAL TIPO DE PRODUCTO -->
+	<form th:replace="producto/agregarProducto :: form-agregar-producto"></form>
+	<!-- DIV PARA BLOQUEAR EL FONDO CUNADO SE ABRA UN FORM -->
+	<div id="fondo"></div>
+	
+	<div class="col-lg-12 container-section">
+			<section id="custom-tab-productos"
+				class="section principal-content p-2 show-section mt-3 mb-5">
+				<div class="col-10 col-lg-10 mt-1">
+						<div class="nav-actions">
+							<ul class="topmenu">
+								<li><a href="#" onclick="agregarProducto()">
+										<i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Agregar Producto</a></li>
+								<li><a href="#" onclick="agregarTipoProducto()">
+										<i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Agregar Tipo de Producto</a></li>
+							</ul>
+						</div>
+						<div class="contenido">
+							<table id="tblProductos"
+								class="table table-striped table-hover table-sm">
+								<thead>
+									<tr class="text-center text-sm">
+										<th>Codigo Producto</th>
+										<th>Descripcion</th>
+										<th>Precio</th>
+										<th>Fecha Ingreso</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+				</div>
+			</section>
+		</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+	<script th:replace="producto/js/dataTablesProductos :: tblProductos"></script>
+	<script th:src="@{/js/funciones-producto.js}"></script>
+</body>
+</html>

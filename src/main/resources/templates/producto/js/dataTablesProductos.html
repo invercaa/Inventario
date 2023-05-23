@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<body>
+	<script type="text/javascript" th:fragment="tblProductos">
+		$('#tblProductos').DataTable({
+			sAjaxSource: "/listarProductos",
+			dom: 'Bfrltip',
+			autoWidth: false,
+			lengthChange: true,
+			processing: true,
+			sAjaxDataProp: "",
+			responsive: true,
+			autoFill: true,
+			pageLength: 10,
+			aoColumns:[
+				{ mData: "prdId", className: "dt-body-center" },
+				{ mData: "prdDescripcion", className: "dt-body-center" },
+				{ mData: "prdPrecio", className: "dt-body-center" },
+				{ mData: "prdFechaIngreso", className: "dt-body-center" },
+			]
+		});
+	</script>
+</body>
+</html>
